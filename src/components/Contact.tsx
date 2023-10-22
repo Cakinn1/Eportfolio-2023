@@ -10,13 +10,14 @@ export default function Contact() {
   const { inViewPort: linksInView, ref: linksRef } = useAnimate();
   const { inViewPort: links1InView, ref: links1Ref } = useAnimate();
 
-  const headerAnimation = headerInView ? "animate__header" : "";
-  const titleAnimation = titleInView ? "animate__title" : "";
-  const aboutAnimation = aboutInView ? "animate__about" : "";
-  const linksAnimation = linksInView ? "animate__links" : "";
-  const links1Animation = links1InView ? "animate__links1" : "";
+  const headerAnimation = headerInView ? "animate__header1" : "";
+  const titleAnimation = titleInView ? "animate__title1" : "";
+  const aboutAnimation = aboutInView ? "animate__about1" : "";
+  const linksAnimation = linksInView ? "animate__links2" : "";
+  const links1Animation = links1InView ? "animate__links12" : "";
   return (
-    <div className="container space-y-4 md:space-y-0 gap-x-8 flex flex-col md:flex-row py-[100px]  p-6">
+    <div className="container space-y-4 md:space-y-0 gap-x-8 flex flex-col md:flex-row py-[100px]  p-6"
+    id="contact">
       <div className=" md:w-1/2 space-y-4">
         <h1 className={`font-semibold ${headerAnimation}`} ref={headerRef} style={{opacity: headerInView ? "1" : '0'}}>Contact</h1>
         <p className={`font-bold text-3xl ${titleAnimation}`} ref={titleRef} style={{ opacity: titleInView ? 1 : 0 }}>Ready to build something great</p>

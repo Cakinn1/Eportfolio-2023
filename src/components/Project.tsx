@@ -17,7 +17,8 @@ export default function Project() {
 
   return (
     <section className="relative">
-      <section className="container p-[80px] px-[24px] space-y-12">
+      <section className="container p-[80px] px-[24px] space-y-12"
+      id="projects">
         <div className={`flex font-bold text-center md:text-left justify-center items-center ${titleAnimate}`} ref={titleRef} style={{ opacity: titleView ? 1 : 0 }}>
           <h1 className="text-[40px]">
             Here are some of my <span className="text-[#888]">projects</span>

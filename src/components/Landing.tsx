@@ -11,13 +11,14 @@ export default function Landing() {
       <BackgroundImage />
       <section
         className="container relative flex items-center p-6"
+        id="home"
         style={{ height: `calc(100vh - 84px)` }}
       >
         <div className="font-bold">
           <h1 className="leading-none animate__header  md:text-[120px]  text-[52px] text-left  ">
             Hey <br /> <span className="text-[#888] r">I'm Anthony.</span>
           </h1>
-          <p className="text-[52px] animate__title">
+          <p className="md:text-[52px] text-[36px] animate__title">
             <TypeWriter
               onInit={(typewriter) => {
                 typewriter

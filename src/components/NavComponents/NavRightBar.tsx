@@ -25,13 +25,10 @@ export default function NavRightBar({
               onClick={() => handleModal()}
             />
             <div className="mt-10 space-y-2  text-lg cursor-pointer">
-              <NavRightList paragraph="Home" />
-              <NavRightList paragraph="About Me" />
-              <NavRightList paragraph="Projects" />
-              <NavRightList paragraph="Testimonials" />
-              <button className="bg-black w-full py-3 shadow-2xl text-white hover:bg-white border hover:text-black ease-in-out border-black transition-colors duration-500 hover:duration-500">
-                Contact
-              </button>
+              <NavRightList href="#home" paragraph="Home" />
+              <NavRightList href="#about" paragraph="About Me" />
+              <NavRightList href="#projects" paragraph="Projects" />
+              <NavRightList href="#contact" paragraph="Contact" />
             </div>
           </div>
         </section>

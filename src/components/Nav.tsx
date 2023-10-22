@@ -50,7 +50,7 @@ export default function Nav() {
         >
           <NavList href="#about" paragraph="About" />
           <NavList href="#projects" paragraph="Projects" />
-          <NavList href="#contacts" paragraph="Contact" />
+          <NavList href="#contact" paragraph="Contact" />
           <NavList
             href="#"
             icon={

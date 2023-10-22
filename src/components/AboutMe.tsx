@@ -20,7 +20,8 @@ const projectAnimation = projectInView && 'animate__about--me'
           }}
         ></div>
       </div>
-      <div className="container h-screen p-[100px] px-[24px] relative">
+      <div className="container h-screen p-[100px] px-[24px] relative"
+      id="about">
         <div className={` min-h-[70vh] bg-gray-100 shadow-lg   rounded-b-lg ${projectAnimation ? "animate__about--me" : "opacity-0"} `}
       ref={projectRef}>
           <div  className="border-b bg-[#e5e7eb] rounded-t-lg gap-x-4 p-4 flex items-center justify-end border-[#e5e7eb] h-12">

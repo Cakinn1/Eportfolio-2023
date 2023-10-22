@@ -21,4 +21,5 @@ export interface NavRightBarProps {
 
   export interface NavRightListProps {
     paragraph: string
+    href: string
 }
