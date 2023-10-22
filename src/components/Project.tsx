@@ -15,15 +15,18 @@ export default function Project() {
   const project4Animate = project4View && `animate__project4`;
 
   return (
+    <section className="relative">
+
     <section className="container   p-[80px] px-[24px] space-y-12">
-      <div className="flex font-bold justify-center items-center">
-        <h1 className={`text-[40px] ${titleAnimate}`} ref={titleRef}>
+      <div className="flex font-bold text-center md:text-left justify-center items-center">
+        <h1 className={`text-[40px]  ${titleAnimate}`} ref={titleRef}>
           Here are some of my <span className="text-[#888]">projects</span>
         </h1>
       </div>
       <div className={`${project1Animate} `} ref={project1}>
         <Projects
-        image='v.png'
+          v={true}
+          image="p1.png"
           projectName="Ultraverse"
           project="Internship"
           Api="FES API"
@@ -37,7 +40,8 @@ export default function Project() {
       </div>
       <div className={`${project2Animate} `} ref={project2}>
         <Projects
-         image="/carTest.webp"
+          l={true}
+          image="l1.png"
           projectName="E-commerce Library"
           project="Personal Project"
           Api="Custom API"
@@ -51,24 +55,40 @@ export default function Project() {
         "
         />
       </div>
+      <div
+          className="absolute top-[100px]  w-[1400px] -rotate-90 -right-[700px] h-[650px] md:h-[700px] bg-cover -z-50 "
+          style={{
+            backgroundImage: `url("./wave5.svg")`,
+          }}
+        ></div>
       <div className={`${project3Animate} `} ref={project3}>
         <Projects
-          image="/carTest.webp"
+          c={true}
+          image="c.png"
           projectName="Car Rental"
           project="Personal Project"
           Api="Custom API"
           javaScript="Javascript"
           CSS="TailwindCSS"
           firebase="Firebase"
-          typeScript="TypeScript"
           framework="React.js"
+          redux="redux"
           github="https://github.com/Cakinn1/carRental-app"
           vercel="https://car-rental-app-mu.vercel.app/"
           paragraph="Revolutionize car rentals with a React TypeScript app featuring 6 dynamic pages, Redux-powered state management, and secure Firebase authentication."
         />
       </div>
+      <div
+          className="absolute top-[1400px]  w-[1400px] rotate-90 -left-[700px] h-[650px] md:h-[700px] bg-cover -z-50 "
+          style={{
+            backgroundImage: `url("./wave5.svg")`,
+          }}
+        ></div>
       <div className={`${project4Animate} `} ref={project4}>
         <Projects
+          t={true}
+          image="t1.png"
+          redux="redux"
           projectName="Twitter Clone"
           project="Personal Project"
           javaScript="Javascript"
@@ -80,6 +100,8 @@ export default function Project() {
           paragraph="A Twitter Clone featuring a responsive UI, real-time data sync, secure authentication, and comprehensive CRUD functionality."
         />
       </div>
+    </section>
+
     </section>
   );
 }

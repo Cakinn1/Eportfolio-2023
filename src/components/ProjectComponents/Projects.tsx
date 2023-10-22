@@ -18,7 +18,11 @@ export interface ProjectProps {
   project: string;
   github: string;
   vercel: string;
-  image?: string
+  image?: string;
+  v?: boolean;
+  l?: boolean;
+  c?: boolean;
+  t?: boolean;
 }
 
 export default function Projects({
@@ -34,19 +38,25 @@ export default function Projects({
   typeScript,
   github,
   vercel,
-  image
+  image,
+  v,
+  c,
+  l,
+  t,
 }: ProjectProps) {
-
-
   return (
-    <div className="rounded-2xl flex w-full min-h-2/5 p-8  shadow-2xl gap-x-8 bg-gray-100">
-      <div className="relative  h-[320px]  w-[500px] overflow-hidden bg-cover object-cover ">
-        <img  src={image} className={`shadow-lg h-auto w-[100%]   object-cover rounded-2xl class1 `} alt="" />
+    <div className="rounded-2xl space-y-4 md:space-y-0 flex-col md:flex-row flex w-full min-h-2/5 p-8  shadow-2xl gap-x-8 bg-gray-100">
+      <div className="relative  h-[320px]  rounded-2xl md:w-[500px] overflow-hidden bg-cover object-cover ">
+        <img
+          src={image}
+          className={`shadow-lg  w-[100%] ${c && 'class3'} ${t && 'class4'} ${l && 'class2'}   object-cover rounded-2xl  ${
+            v && "class1"
+          }  `}
+          alt=""
+        />
       </div>
-     
 
-
-      <div className="w-[40%] flex space-y-4  items-center text-center flex-col">
+      <div className=" md:w-[40%] flex space-y-4  items-center text-center flex-col">
         <div className="flex gap-x-2">
           <h1 className="font-bold text-lg">
             {projectName} - <span>{project}</span>

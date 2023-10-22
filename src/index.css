@@ -290,9 +290,8 @@ body {
 
 
 
-/* Initial state */
 .class1:hover {
-  animation: test 4s ease-in-out;
+  animation: test 10s ease-in-out;
 }
 
 @keyframes test {
@@ -300,7 +299,159 @@ body {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-81%);
+    transform: translateY(-69%);
   }
 }
 
+
+@media (max-width: 768px) {
+  .class1:hover {
+    animation: smallerTest 10s ease-in-out;
+  }
+
+  @keyframes smallerTest {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-60%); 
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .class1:hover {
+    animation: mediumTest 10s ease-in-out;
+  }
+  @keyframes mediumTest {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-63%);
+    }
+  }
+}
+
+
+.class2:hover {
+  animation: test2 10s ease-in-out;
+}
+
+
+@keyframes test2 {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-73%);
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .class2:hover {
+    animation: smallerTest2 4s ease-in-out;
+  }
+
+  @keyframes smallerTest2 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-60%); 
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .class2:hover {
+    animation: mediumTest2 10s ease-in-out;
+  }
+  @keyframes mediumTest2 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-63%);
+    }
+  }
+}
+
+
+
+
+.class3:hover {
+  animation: test3 10s ease-in-out;
+}
+
+@keyframes test3 {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-86%);
+  }
+}
+
+
+/* @media (max-width: 768px) {
+  .class3:hover {
+    animation: smallerTest3 2s ease-in-out;
+  }
+
+  @keyframes smallerTest3 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%); 
+    }
+  }
+} */
+
+@media (max-width: 1024px) {
+  .class3:hover {
+    animation: mediumTest3 10s ease-in-out;
+  }
+  @keyframes mediumTest3 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-84%);
+    }
+  }
+}
+
+
+
+
+.class4:hover {
+  animation: test4 10s ease-in-out;
+}
+
+@keyframes test4 {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-74%);
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .class4:hover {
+    animation: mediumTest4 4s ease-in-out;
+  }
+  @keyframes mediumTest4 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-65%);
+    }
+  }
+}
