@@ -9,6 +9,7 @@ import { AiOutlineLoading } from "react-icons/ai";
 import TypeWriter from "typewriter-effect";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import { GrMail } from "react-icons/gr";
 
 function App() {
   const [loadingState, setLoadingState] = useState<boolean>(true);
@@ -36,7 +37,12 @@ function App() {
         </section>
       ) : (
         <>
-
+          <a
+            href="#contact"
+            className="fixed click right-6 text-white bottom-6 p-5 px-5 rounded-full z-50 bg-[#1b1b1b]"
+          >
+            <GrMail className="text-2xl" />
+          </a>
           <Nav />
           <Landing />
           <AboutMe />
@@ -45,7 +51,6 @@ function App() {
           <Footer />
         </>
       )}
-      {/* <div className="h-screen">d</div> */}
     </div>
   );
 }
@@ -55,7 +60,7 @@ export default App;
 /// come back and chang ehte text underline on the nav
 
 //make sure they can actually send emails
-// anaimation 
+// anaimation
 // black backgrounds
 // fix project lower breakpoint
 // maybe change animations on project
