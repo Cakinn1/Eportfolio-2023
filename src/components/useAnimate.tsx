@@ -1,35 +1,37 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
-export default function useAnimate() {
-  const [inViewPort, setInViewPort] = useState<boolean>(false);
+function useAnimate() {
+  const [inViewPort, setInViewPort] = useState(false);
+  const [animationPlayed, setAnimationPlayed] = useState(false);
+
   const ref = useRef(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            console.log(entry.isIntersecting, 'is this true?')
-            setInViewPort(true);
-          } else {
-            setInViewPort(false);
-            console.log(entry.isIntersecting, 'is this false?')
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          setInViewPort(true);
+          if (!animationPlayed) {
+            setAnimationPlayed(true);
           }
-        });
+        }
       },
-      { threshold: 0}
+      { threshold: 0.2 }
     );
 
-    const elementWeAreOn = ref.current;
-    console.log(ref.current);
-    if (elementWeAreOn) {
-      observer.observe(elementWeAreOn);
+    if (ref.current) {
+      observer.observe(ref.current);
     }
 
     return () => {
-      if (elementWeAreOn) {
-        observer.unobserve(elementWeAreOn);
+      if (ref.current) {
+        observer.unobserve(ref.current);
       }
     };
-  }, []);
-  return { ref, inViewPort };
+  }, [ref, animationPlayed]);
+
+  return { inViewPort, ref, animationPlayed };
 }
+
+export default useAnimate;

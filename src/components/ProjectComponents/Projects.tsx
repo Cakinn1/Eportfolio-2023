@@ -44,14 +44,19 @@ export default function Projects({
   l,
   t,
 }: ProjectProps) {
+
+
+
+
+  
   return (
     <div className="rounded-2xl space-y-4 md:space-y-0 flex-col md:flex-row flex w-full min-h-2/5 p-8  shadow-2xl gap-x-8 bg-gray-100">
       <div className="relative  h-[320px]  rounded-2xl md:w-[500px] overflow-hidden bg-cover object-cover ">
         <img
           src={image}
-          className={`shadow-lg  w-[100%] ${c && 'class3'} ${t && 'class4'} ${l && 'class2'}   object-cover rounded-2xl  ${
-            v && "class1"
-          }  `}
+          className={`shadow-lg  w-[100%] ${c && "class3"} ${t && "class4"} ${
+            l && "class2"
+          }   object-cover rounded-2xl  ${v && "class1"}  `}
           alt=""
         />
       </div>

@@ -17,7 +17,6 @@ export default function Landing() {
           <h1 className="leading-none animate__header  md:text-[120px]  text-[52px] text-left  ">
             Hey <br /> <span className="text-[#888] r">I'm Anthony.</span>
           </h1>
-          {/* .typeString("Software Engineer") */}
           <p className="text-[52px] animate__title">
             <TypeWriter
               onInit={(typewriter) => {
