@@ -31,11 +31,15 @@ export default function Nav() {
       />
       <nav className="xl:mt-4 mx-auto w-full xl:bg-white rounded-md xl:shadow-lg  p-6 max-w-[1024px] h-[80px] flex justify-between items-center">
         <figure>
+          <a href="#home">
+
           <img
-            className="object-cover border-2 border-black h-[50px] rounded-full"
+            className="object-cover click hover:border-[#888] cursor-pointer duration-500 hover:duration-500 ease-in-out border-2 border-black h-[50px] rounded-full"
             src="./logo-cakin.jpg"
             alt=""
           />
+          </a>
+
         </figure>
         <FaBars
           className={`text-2xl flex md:hidden cursor-pointer click ${

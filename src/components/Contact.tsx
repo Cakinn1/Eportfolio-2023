@@ -29,10 +29,10 @@ export default function Contact() {
           <AiFillMail />
           <a href="mailto:anthonycakins@gmail.com">anthonycakins@gmail.com</a>
         </div>
-        {/* <div className={`${linksAnimation} flex items-center gap-x-2`} ref={linksRef} style={{ opacity: linksInView ? 1 : 0 }}>
+        <div className={`${linksAnimation} flex items-center gap-x-2`} ref={linksRef} style={{ opacity: linksInView ? 1 : 0 }}>
           <BiPhone />
           <a href="tel:0414792398">0414792398</a>
-        </div> */}
+        </div>
       </div>
       <form onSubmit={(e) => e.preventDefault()} ref={links1Ref} style={{opacity: links1InView ? 1 : 0}} className={`md:w-1/2 space-y-4 ${links1Animation}`}>
         <div>
