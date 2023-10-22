@@ -12,7 +12,7 @@ export default function NavRightBar({
   return (
     <>
       {isModalOpen && (
-        <section className="fixed bg-black bg-opacity-30 h-full w-full">
+        <section className="fixed bg-black z-50 bg-opacity-30 h-full w-full">
           <div
             className={`absolute right-0 p-6 bg-white h-full max-w-[600px] md:w-[50vw] w-[60vw] z-50 ${
               rightBarAnimate

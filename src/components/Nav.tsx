@@ -23,13 +23,13 @@ export default function Nav() {
   };
 
   return (
-    <section className="bg-white rounded-md shadow-lg xl:max-w-[1024px] mx-auto">
+    <section className="bg-white xl:bg-transparent fixed w-full z-50    animate__nav shadow-lg xl:shadow-none xl:max-w-[1024px mx-auto">
       <NavRightBar
         handleModal={handleModal}
         isModalOpen={isModalOpen}
         rightBarAnimate={rightBarAnimate}
       />
-      <nav className="xl:mt-4 mx-auto p-6 max-w-[1024px] h-[80px] flex justify-between items-center">
+      <nav className="xl:mt-4 mx-auto w-full xl:bg-white rounded-md xl:shadow-lg  p-6 max-w-[1024px] h-[80px] flex justify-between items-center">
         <figure>
           <img
             className="object-cover border-2 border-black h-[50px] rounded-full"
@@ -38,10 +38,16 @@ export default function Nav() {
           />
         </figure>
         <FaBars
-          className={`text-2xl flex md:hidden cursor-pointer click ${isModalOpen ? "hidden" : "flex"}`}
+          className={`text-2xl flex md:hidden cursor-pointer click ${
+            isModalOpen ? "hidden" : "flex"
+          }`}
           onClick={() => handleModal()}
         />
-        <ul className={`font-semibold justify-center items-center gap-x-4 hidden md:flex ${isModalOpen ? "-z-50" : "z-10"}`}>
+        <ul
+          className={`font-semibold justify-center items-center gap-x-4 hidden md:flex ${
+            isModalOpen ? "-z-50" : "z-10"
+          }`}
+        >
           <NavList href="#about" paragraph="About" />
           <NavList href="#projects" paragraph="Projects" />
           <NavList href="#contacts" paragraph="Contact" />
