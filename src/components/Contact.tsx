@@ -2,7 +2,8 @@ import { AiFillMail } from "react-icons/ai";
 import { BsPhone, BsPhoneFill } from "react-icons/bs";
 import { BiPhone } from "react-icons/bi";
 import useAnimate from "./useAnimate";
-
+import { useState } from "react";
+import emailjs from 'emailjs-com';
 export default function Contact() {
   const { inViewPort: headerInView, ref: headerRef } = useAnimate();
   const { inViewPort: titleInView, ref: titleRef } = useAnimate();
@@ -15,6 +16,31 @@ export default function Contact() {
   const aboutAnimation = aboutInView ? "animate__about1" : "";
   const linksAnimation = linksInView ? "animate__links2" : "";
   const links1Animation = links1InView ? "animate__links12" : "";
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+
+  const sendEmail = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setLoading(true);
+console.log('test')
+    try {
+      await emailjs.sendForm(
+        "service_sz89zkj",
+        "template_6a5t7z5",
+        event.currentTarget,
+        "xSrf96z8wZJVPEI1y"
+      );
+      setLoading(false);
+      setSuccess(true);
+    } catch (e) {
+      setLoading(false);
+      setError(true);
+    }
+  };
+
+
   return (
     <div className="container space-y-4 md:space-y-0 gap-x-8 flex flex-col md:flex-row py-[100px]  p-6"
     id="contact">
@@ -34,7 +60,7 @@ export default function Contact() {
           <a href="tel:0414792398">0414792398</a>
         </div>
       </div>
-      <form onSubmit={(e) => e.preventDefault()} ref={links1Ref} style={{opacity: links1InView ? 1 : 0}} className={`md:w-1/2 space-y-4 ${links1Animation}`}>
+      <form onSubmit={sendEmail} ref={links1Ref} style={{opacity: links1InView ? 1 : 0}} className={`md:w-1/2 space-y-4 ${links1Animation}`}>
         <div>
           <h1 className="font-bold">Name</h1>
           <input

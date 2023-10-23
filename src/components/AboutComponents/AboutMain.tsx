@@ -22,7 +22,7 @@ export default function AboutMain() {
         </h1>
         <p >
           As a Junior Front-End Developer, I possess an impressive arsenal of
-          skills in HTML, CSS, JavaScript, React, Nextjs, and Tailwind CSS.
+          skills in HTML, CSS, JavaScript, Typescript, React, Nextjs, Redux and Tailwind CSS.
         </p>
         <p>
           I excel in designing and maintaining responsive websites that offer a

@@ -41,7 +41,7 @@ body {
 }
 
 .click {
-  @apply hover:scale-125 active:scale-75  duration-500 hover:duration-500 ease-in-out;
+  @apply hover:scale-110 active:scale-75  duration-500 hover:duration-500 ease-in-out;
 }
 
 .nav__side-bar--links {
