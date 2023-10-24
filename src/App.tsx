@@ -1,15 +1,11 @@
-import { useEffect, useRef, useState } from "react";
-import AboutMe from "./components/AboutMe";
-import Landing from "./components/Landing";
+import { useEffect, useState } from "react";
 import Nav from "./components/Nav";
-import Project from "./components/Project";
 import "./index.css";
-import { FaTruckLoading } from "react-icons/fa";
-import { AiOutlineLoading } from "react-icons/ai";
 import TypeWriter from "typewriter-effect";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import { GrMail } from "react-icons/gr";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Main from "./components/Main";
+import ExtraProjects from "./components/ExtraProjects";
 
 function App() {
   const [loadingState, setLoadingState] = useState<boolean>(true);
@@ -36,20 +32,14 @@ function App() {
           </div>
         </section>
       ) : (
-        <>
-          <a
-            href="#contact"
-            className="fixed click right-6 text-white bottom-6 p-5 px-5 rounded-full z-50 bg-[#1b1b1b]"
-          >
-            <GrMail className="text-2xl" />
-          </a>
+        <Router>
           <Nav />
-          <Landing />
-          <AboutMe />
-          <Project />
-          <Contact />
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/ExtraProjects" element={<ExtraProjects />} />
+          </Routes>
           <Footer />
-        </>
+        </Router>
       )}
     </div>
   );

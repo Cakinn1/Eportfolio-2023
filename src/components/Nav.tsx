@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { BsCircleHalf } from "react-icons/bs";
+import { BsCircleHalf, BsFolderSymlink } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 import NavList from "./NavComponents/NavList";
 import NavRightBar from "./NavComponents/NavRightBar";
+import { Link } from "react-router-dom";
 export default function Nav() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [rightBarAnimate, setRightBarAnimate] = useState<boolean>(false);
@@ -22,6 +23,14 @@ export default function Nav() {
     }
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+
   return (
     <section className="bg-white xl:bg-transparent fixed w-full z-50    animate__nav shadow-lg xl:shadow-none xl:max-w-[1024px mx-auto">
       <NavRightBar
@@ -30,15 +39,15 @@ export default function Nav() {
         rightBarAnimate={rightBarAnimate}
       />
       <nav className="xl:mt-4 mx-auto w-full xl:bg-white rounded-md xl:shadow-lg  p-6 max-w-[1024px] h-[80px] flex justify-between items-center">
-        <figure>
-          <a href="#home">
-            <img
-              className="object-cover click hover:border-[#888] cursor-pointer duration-500 hover:duration-500 ease-in-out border-2 border-black h-[50px] rounded-full"
-              src="./logo-cakin.jpg"
-              alt=""
-            />
-          </a>
-        </figure>
+      <figure>
+  <Link to="/" onClick={() => scrollToSection('home')}>
+      <img
+        className="object-cover click hover:border-[#888] cursor-pointer duration-500 hover:duration-500 ease-in-out border-2 border-black h-[50px] rounded-full"
+        src="./logo-cakin.jpg"
+        alt=""
+      />
+  </Link>
+</figure>
 
         <FaBars
           className={`text-2xl flex md:hidden cursor-pointer click ${
@@ -52,36 +61,36 @@ export default function Nav() {
           }`}
         >
           <li className="nav__link click ">
-            <a
-              href="#about"
+            <Link
+             to="/" onClick={() => scrollToSection('about')}
               className={`nav__link--anchor  hover:text-[#888] duration-500 hover:duration-500 ease-in-out link__hover-effect link__hover-effect--black `}
             >
               About
-            </a>
+            </Link>
           </li>
           <li className="nav__link click ">
-            <a
-              href="#projects"
+            <Link
+             to="/" onClick={() => scrollToSection('projects')}
               className={`nav__link--anchor   hover:text-[#888] duration-500 hover:duration-500 ease-in-out link__hover-effect link__hover-effect--black `}
             >
               Projects
-            </a>
+            </Link>
           </li>
           <li className="nav__link click ">
-            <a
-              href="#contact"
+            <Link
+             to="/" onClick={() => scrollToSection('contact')}
               className={`nav__link--anchor   hover:text-[#888] duration-500 hover:duration-500 ease-in-out link__hover-effect link__hover-effect--black `}
             >
               Contact
-            </a>
+            </Link>
           </li>
           <li className=" click">
-            <a
-              href=""
-              className={`click poin  hover:text-[#888] duration-500 hover:duration-500 ease-in-out link__hover-effect link__hover-effect--black click`}
+            <Link to="/ExtraProjects"
+              // className={`click poin  hover:text-[#888] duration-500 hover:duration-500 ease-in-out link__hover-effect link__hover-effect--black click`}
             >
-              <BsCircleHalf className="fas border-2 rounded-full text-lg border-black fa-adjust" />
-            </a>
+              {/* <BsFolderSymlink className="fa border-rounded-full text-lg  fa-adjust" /> */}
+              {/* <BsCircleHalf className="fas border-2 rounded-full text-lg border-black fa-adjust" /> */}
+            </Link>
           </li>
         </ul>
       </nav>
