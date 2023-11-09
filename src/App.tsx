@@ -62,7 +62,9 @@ export default App;
  Maybe add underlines within nav text
  could add more animations
  extra: maybe add loading state based on width with time interval on mount
-
+implement modal for twitter clone link on how to not be alarmed when,
+seeing the 'DECEPTIVE SITE AHEAD', make a modal on what to do and why
+it says this
 
 * {
    maybe add second page with more projects like secondary portfolio.

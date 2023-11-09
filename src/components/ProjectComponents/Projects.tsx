@@ -210,15 +210,6 @@ export default function Projects({
             </div>
           </>
         )}
-
-
-
-
-
-
-
-
-
       </div>
 
       <div className=" md:w-[40%] flex space-y-4  items-center text-center flex-col">
