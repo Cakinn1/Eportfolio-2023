@@ -10,12 +10,10 @@ export default function Mouse() {
     <div
       onClick={() => handleMouseClick()}
       ref={refInView}
-      className={` click absolute animate__mouse cursor-pointer  flex justify-center items-center border-2 border-black w-6 rounded-t-full rounded-b-full h-10 bottom-14 left-1/2 -translate-x-1/2`}
+      className={` click absolute   animate__mouse cursor-pointer  flex justify-center items-center border-2 border-black w-6 rounded-t-full rounded-b-full h-10 bottom-14 left-1/2 -translate-x-1/2`}
     >
       <div
-        className={` ${
-          inView && "animate__mouse"
-        }  bg-black scroll-up h-2 rounded-full w-1`}
+        className={` bg-black scroll-up h-2  rounded-full w-1`}
       ></div>
     </div>
   );
