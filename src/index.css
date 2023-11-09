@@ -98,7 +98,7 @@ body {
 }
 
 .animate__nav {
-  animation: navFadeIn 1s ease-in-out;
+  animation: navFadeIn 0.5s ease-in-out;
 }
 
 @keyframes navFadeIn {
@@ -109,7 +109,6 @@ body {
     opacity: 1;
   }
 }
-
 
 @keyframes fadeIn {
   0% {
@@ -125,28 +124,40 @@ body {
   }
 }
 .animate__header {
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 0.9s ease-in-out;
 }
 .animate__title {
-  animation: fadeIn2 1.5s ease-in-out;
+  animation: fadeIn2 1.1s ease-in-out;
 }
 
 .animate__about {
-  animation: fadeIn3 2s ease-in-out;
+  animation: fadeIn3 1.3s ease-in-out;
 }
 
 .animate__links {
-  animation: fadeIn4 2.5s ease-in-out;
+  animation: fadeIn4 1.5s ease-in-out;
 }
 
 .animate__links1 {
-  animation: fadeIn7 3s ease-in-out;
+  animation: fadeIn7 1.7s ease-in-out;
+}
+.animate__mouse {
+  animation: fadeIn8 1.9s ease-in-out;
+}
+
+@keyframes fadeIn8 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn7 {
   0% {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(50%);
   }
   50% {
     opacity: 0;
@@ -160,7 +171,7 @@ body {
 @keyframes fadeIn5 {
   0% {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(50%);
   }
   50% {
     opacity: 0;
@@ -173,7 +184,7 @@ body {
 @keyframes fadeIn2 {
   0% {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(50%);
   }
   50% {
     opacity: 0;
@@ -186,7 +197,7 @@ body {
 @keyframes fadeIn3 {
   0% {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(50%);
   }
   50% {
     opacity: 0;
@@ -199,7 +210,7 @@ body {
 @keyframes fadeIn4 {
   0% {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(50%);
   }
   50% {
     opacity: 0;
@@ -211,13 +222,13 @@ body {
 }
 
 .animate__about--me {
-  animation: slideRightToLeft 1s ease-in-out;
+  animation: slideRightToLeft 0.7s ease-in-out;
   opacity: 1;
 }
 
 @keyframes slideRightToLeft {
   0% {
-    transform: translateX(50%);
+    transform: translateX(40%);
     opacity: 0.5;
   }
   100% {
@@ -227,15 +238,18 @@ body {
 }
 
 .animate__project1 {
-  animation: project1 1s ease-in-out;
+  animation: project1 0.5s ease-in-out;
 }
 
 @keyframes project1 {
   0% {
     opacity: 0;
+    transform: translateY(100px);
   }
   100% {
     opacity: 1;
+
+    transform: translateY(0);
   }
 }
 .animate__project {
@@ -252,43 +266,49 @@ body {
 }
 
 .animate__project2 {
-  animation: project2 1s ease-in-out;
+  animation: project2 0.5s ease-in-out;
 }
 
 @keyframes project2 {
   0% {
     opacity: 0;
+    transform: translateY(100px);
   }
-
   100% {
     opacity: 1;
+
+    transform: translateY(0);
   }
 }
 .animate__project3 {
-  animation: project3 1s ease-in-out;
+  animation: project3 0.5s ease-in-out;
 }
 
 @keyframes project3 {
   0% {
     opacity: 0;
+    transform: translateY(100px);
   }
-
   100% {
     opacity: 1;
+
+    transform: translateY(0);
   }
 }
 
 .animate__project4 {
-  animation: project4 1s ease-in-out;
+  animation: project4 0.5s ease-in-out;
 }
 
 @keyframes project4 {
   0% {
     opacity: 0;
+    transform: translateY(100px);
   }
-
   100% {
     opacity: 1;
+
+    transform: translateY(0);
   }
 }
 
@@ -306,8 +326,6 @@ body {
   }
 }
 
-
-
 .class1:hover {
   animation: test 10s ease-in-out;
 }
@@ -321,7 +339,6 @@ body {
   }
 }
 
-
 @media (max-width: 768px) {
   .class1:hover {
     animation: smallerTest 10s ease-in-out;
@@ -332,7 +349,7 @@ body {
       transform: translateY(0);
     }
     100% {
-      transform: translateY(-60%); 
+      transform: translateY(-60%);
     }
   }
 }
@@ -351,11 +368,9 @@ body {
   }
 }
 
-
 .class2:hover {
   animation: test2 10s ease-in-out;
 }
-
 
 @keyframes test2 {
   0% {
@@ -365,8 +380,6 @@ body {
     transform: translateY(-73%);
   }
 }
-
-
 
 @media (max-width: 768px) {
   .class2:hover {
@@ -378,7 +391,7 @@ body {
       transform: translateY(0);
     }
     100% {
-      transform: translateY(-60%); 
+      transform: translateY(-60%);
     }
   }
 }
@@ -397,9 +410,6 @@ body {
   }
 }
 
-
-
-
 .class3:hover {
   animation: test3 10s ease-in-out;
 }
@@ -412,7 +422,6 @@ body {
     transform: translateY(-86%);
   }
 }
-
 
 /* @media (max-width: 768px) {
   .class3:hover {
@@ -443,9 +452,6 @@ body {
   }
 }
 
-
-
-
 .class4:hover {
   animation: test4 10s ease-in-out;
 }
@@ -458,7 +464,6 @@ body {
     transform: translateY(-74%);
   }
 }
-
 
 @media (max-width: 1024px) {
   .class4:hover {
@@ -473,10 +478,6 @@ body {
     }
   }
 }
-
-
-
-
 
 .animate__header1 {
   animation: fade 0.5s ease-in-out;
@@ -496,9 +497,6 @@ body {
 .animate__links12 {
   animation: fade4 1.7s ease-in-out;
 }
-
-
-
 
 @keyframes fade {
   0% {
@@ -565,7 +563,19 @@ body {
   }
 }
 
-
 html {
   scroll-behavior: smooth;
+}
+
+.animate__mail {
+  animation: mail 2s ease-in-out;
+}
+
+@keyframes mail {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

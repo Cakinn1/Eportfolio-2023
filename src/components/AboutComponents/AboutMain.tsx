@@ -1,6 +1,6 @@
 
 
-export default function AboutMain() {
+export default function AboutMain({projectRef}: {projectRef: any}) {
   return (
     <>
       <div className="w-full md:w-1/2 mb-6 md:mb-0 relative h-full">
@@ -20,7 +20,8 @@ export default function AboutMain() {
         <h1 className="font-bold text-[20px] text-black">
           A dedicted Front-end Developer based in Gold Coast, Australia. 📍
         </h1>
-        <p >
+        <p 
+        >
           As a Junior Front-End Developer, I possess an impressive arsenal of
           skills in HTML, CSS, JavaScript, Typescript, React, Nextjs, Redux and Tailwind CSS.
         </p>
@@ -28,7 +29,8 @@ export default function AboutMain() {
           I excel in designing and maintaining responsive websites that offer a
           smooth user experience.
         </p>
-        <p >
+        <p 
+        ref={projectRef}>
           My expertise lies in crafting dynamic, engaging interfaces through
           writing clean and optimized code and utilizing cutting-edge
           development tools and techniques. I am also a team player who thrives

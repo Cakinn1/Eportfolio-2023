@@ -2,10 +2,17 @@ import React from "react";
 import useAnimate from "./useAnimate";
 import Projects from "./ProjectComponents/Projects";
 
+export interface AllImagesProps {
+  u1: string;
+  u2: string;
+  u3: string;
+  u4: string;
+}
+
 export default function Project() {
   const { inViewPort: titleView, ref: titleRef } = useAnimate();
   const titleAnimate = titleView ? "animate__project" : "";
-  
+
   const { inViewPort: project1View, ref: project1 } = useAnimate();
   const { inViewPort: project2View, ref: project2 } = useAnimate();
   const { inViewPort: project3View, ref: project3 } = useAnimate();
@@ -15,19 +22,38 @@ export default function Project() {
   const project3Animate = project3View ? "animate__project3" : "";
   const project4Animate = project4View ? "animate__project4" : "";
 
+  const allImagesForCarsuel: AllImagesProps[] = [
+    {
+      u1: "u1.png",
+      u2: "u2.png",
+      u3: "u3.png",
+      u4: "u4.png",
+    },
+  ];
+
   return (
     <section className="relative">
-      <section className="container p-[80px] px-[24px] space-y-12"
-      id="projects">
-        <div className={`flex font-bold text-center md:text-left justify-center items-center ${titleAnimate}`} ref={titleRef} style={{ opacity: titleView ? 1 : 0 }}>
+      <section
+        className="container p-[80px] px-[24px] space-y-12"
+        id="projects"
+      >
+        <div
+          className={`flex font-bold text-center md:text-left justify-center items-center ${titleAnimate}`}
+          ref={titleRef}
+          style={{ opacity: titleView ? 1 : 0 }}
+        >
           <h1 className="text-[40px]">
             Here are some of my <span className="text-[#888]">projects</span>
           </h1>
         </div>
-        <div className={`${project1Animate}`} ref={project1} style={{ opacity: project1View ? 1 : 0 }}>
+        <div
+          className={`${project1Animate}`}
+          style={{ opacity: project1View ? 1 : 0 }}
+        >
           <Projects
+            reftest={project1}
             v={true}
-            image="p1.png"
+            image={['u1.png', 'u2.png', 'u3.png', 'u4.png']}
             projectName="Ultraverse"
             project="Internship"
             Api="FES API"
@@ -39,10 +65,14 @@ export default function Project() {
             paragraph="This project was a Virtual Internship mockup where I had to create all the functionality using the data provided via an API."
           />
         </div>
-        <div className={`${project2Animate}`} ref={project2} style={{ opacity: project2View ? 1 : 0 }}>
+        <div
+          className={`${project2Animate}`}
+          style={{ opacity: project2View ? 1 : 0 }}
+        >
           <Projects
             l={true}
-            image="l1.png"
+            reftest={project2}
+            image={['b1.png', 'b2.png', 'b3.png', 'b4.png']}
             projectName="E-commerce Library"
             project="Personal Project"
             Api="Custom API"
@@ -54,11 +84,18 @@ export default function Project() {
             paragraph="Ecom Library: React app, versatile sorting, seamless purchases, enhanced UX, skeleton loading. Showcases UI/UX skills, algorithm implementation."
           />
         </div>
-        <div className="absolute top-[100px]  w-[1400px] -rotate-90 -right-[700px] h-[650px] md:h-[700px] bg-cover -z-50" style={{ backgroundImage: `url("./wave5.svg")` }}></div>
-        <div className={`${project3Animate}`} ref={project3} style={{ opacity: project3View ? 1 : 0 }}>
+        <div
+          className="absolute top-[100px]  w-[1400px] -rotate-90 -right-[700px] h-[650px] md:h-[700px] bg-cover -z-50"
+          style={{ backgroundImage: `url("./wave5.svg")` }}
+        ></div>
+        <div
+          className={`${project3Animate}`}
+          style={{ opacity: project3View ? 1 : 0 }}
+        >
           <Projects
             c={true}
-            image="c.png"
+            reftest={project3}
+            image={["r1.png","r2.png","r3.png","r4.png",]}
             projectName="Car Rental"
             project="Personal Project"
             Api="Custom API"
@@ -72,11 +109,18 @@ export default function Project() {
             paragraph="Revolutionize car rentals with a React TypeScript app featuring 6 dynamic pages, Redux-powered state management, and secure Firebase authentication."
           />
         </div>
-        <div className="absolute top-[1400px]  w-[1400px] rotate-90 -left-[700px] h-[650px] md:h-[700px] bg-cover -z-50" style={{ backgroundImage: `url("./wave5.svg")` }}></div>
-        <div className={`${project4Animate}`} ref={project4} style={{ opacity: project4View ? 1 : 0 }}>
+        <div
+          className="absolute top-[1400px]  w-[1400px] rotate-90 -left-[700px] h-[650px] md:h-[700px] bg-cover -z-50"
+          style={{ backgroundImage: `url("./wave5.svg")` }}
+        ></div>
+        <div
+          className={`${project4Animate}`}
+          style={{ opacity: project4View ? 1 : 0 }}
+        >
           <Projects
             t={true}
-            image="t1.png"
+            reftest={project4}
+            image={["t1.png","t2.png","t3.png","t4.png",]}
             redux="redux"
             projectName="Twitter Clone"
             project="Personal Project"

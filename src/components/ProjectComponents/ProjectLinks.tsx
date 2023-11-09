@@ -5,6 +5,7 @@ export interface ProjectLinksProps {
   href: string;
   title: string;
   notProject?: boolean;
+  reftest?: any;
 }
 
 export default function ProjectLinks({
@@ -12,6 +13,7 @@ export default function ProjectLinks({
   icon,
   title,
   notProject,
+  reftest,
 }: ProjectLinksProps) {
   return (
     <a

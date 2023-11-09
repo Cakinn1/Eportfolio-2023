@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import Project from "../Project";
+import Project, { AllImagesProps } from "../Project";
 import LandingLinks from "../LandingComponents/LandingLinks";
 import { BsGithub, BsLink } from "react-icons/bs";
-import { AiOutlineLink } from "react-icons/ai";
+import { AiOutlineLeft, AiOutlineLink, AiOutlineRight } from "react-icons/ai";
 import ProjectLinks from "./ProjectLinks";
+import { BiRightArrow } from "react-icons/bi";
 
 export interface ProjectProps {
   paragraph: string;
@@ -18,11 +19,12 @@ export interface ProjectProps {
   project: string;
   github: string;
   vercel: string;
-  image?: string;
+  image: string[];
   v?: boolean;
   l?: boolean;
   c?: boolean;
   t?: boolean;
+  reftest?: any;
 }
 
 export default function Projects({
@@ -43,22 +45,180 @@ export default function Projects({
   c,
   l,
   t,
+  reftest,
 }: ProjectProps) {
+  // const [images, setImages] = useState<string[]>([
+  //   "u1.png",
+  //   "u2.png",
+  //   "u3.png",
+  //   "u4.png",
+  // ]);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
+  function handleNext() {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === image.length - 1 ? (prevIndex = 0) : prevIndex + 1
+    );
+  }
 
+  function handlePrevious() {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? (prevIndex = image.length - 1) : prevIndex - 1
+    );
+  }
 
-
-  
   return (
     <div className="rounded-2xl space-y-4 md:space-y-0 flex-col md:flex-row flex w-full min-h-2/5 p-8  shadow-2xl gap-x-8 bg-gray-100">
-      <div className="relative  h-[320px]  rounded-2xl md:w-[500px] overflow-hidden bg-cover object-cover ">
-        <img
-          src={image}
-          className={`shadow-lg  w-[100%] ${c && "class3"} ${t && "class4"} ${
-            l && "class2"
-          }   object-cover rounded-2xl  ${v && "class1"}  `}
-          alt=""
-        />
+      <div className="relative  h-[320px]  rounded-2xl md:w-[500px] overflow-hidden flex bg-cover object-cover ">
+        {v && (
+          <>
+            {image.map((item, index) => (
+              <img
+                key={index}
+                src={item}
+                style={{
+                  transitionDuration: "1s",
+                  transform: `translateX(-${currentIndex * 100}%)`,
+                }}
+                alt="0.0"
+              />
+            ))}
+            <div
+              className="absolute right-4 top-[50%] bg-black bg-opacity-40 cursor-pointer click rounded-full text-white text-lg p-1 "
+              onClick={() => handleNext()}
+            >
+              <AiOutlineRight />
+            </div>
+            <div
+              className="absolute left-4 top-[50%] bg-black bg-opacity-40 cursor-pointer click rounded-full text-white text-lg p-1 "
+              onClick={() => handlePrevious()}
+            >
+              <AiOutlineLeft />
+            </div>
+          </>
+        )}
+
+        {l && (
+          <>
+            {image.map((item, index) => (
+              <img
+                key={index}
+                src={item}
+                style={{
+                  transitionDuration: "1s",
+                  transform: `translateX(-${currentIndex * 100}%)`,
+                }}
+                alt="0.0"
+              />
+            ))}
+            <div
+              className="absolute right-4 top-[50%] bg-black bg-opacity-40 cursor-pointer click rounded-full text-white text-lg p-1 "
+              onClick={() => handleNext()}
+            >
+              <AiOutlineRight />
+            </div>
+            <div
+              className="absolute left-4 top-[50%] bg-black bg-opacity-40 cursor-pointer click rounded-full text-white text-lg p-1 "
+              onClick={() => handlePrevious()}
+            >
+              <AiOutlineLeft />
+            </div>
+          </>
+        )}
+
+{l && (
+          <>
+            {image.map((item, index) => (
+              <img
+                key={index}
+                src={item}
+                style={{
+                  transitionDuration: "1s",
+                  transform: `translateX(-${currentIndex * 100}%)`,
+                }}
+                alt="0.0"
+              />
+            ))}
+            <div
+              className="absolute right-4 top-[50%] bg-black bg-opacity-40 cursor-pointer click rounded-full text-white text-lg p-1 "
+              onClick={() => handleNext()}
+            >
+              <AiOutlineRight />
+            </div>
+            <div
+              className="absolute left-4 top-[50%] bg-black bg-opacity-40 cursor-pointer click rounded-full text-white text-lg p-1 "
+              onClick={() => handlePrevious()}
+            >
+              <AiOutlineLeft />
+            </div>
+          </>
+        )}
+
+{c && (
+          <>
+            {image.map((item, index) => (
+              <img
+                key={index}
+                src={item}
+                style={{
+                  transitionDuration: "1s",
+                  transform: `translateX(-${currentIndex * 100}%)`,
+                }}
+                alt="0.0"
+              />
+            ))}
+            <div
+              className="absolute right-4 top-[50%] bg-black bg-opacity-40 cursor-pointer click rounded-full text-white text-lg p-1 "
+              onClick={() => handleNext()}
+            >
+              <AiOutlineRight />
+            </div>
+            <div
+              className="absolute left-4 top-[50%] bg-black bg-opacity-40 cursor-pointer click rounded-full text-white text-lg p-1 "
+              onClick={() => handlePrevious()}
+            >
+              <AiOutlineLeft />
+            </div>
+          </>
+        )}
+
+
+{t && (
+          <>
+            {image.map((item, index) => (
+              <img
+                key={index}
+                src={item}
+                style={{
+                  transitionDuration: "1s",
+                  transform: `translateX(-${currentIndex * 100}%)`,
+                }}
+                alt="0.0"
+              />
+            ))}
+            <div
+              className="absolute right-4 top-[50%] bg-black bg-opacity-40 cursor-pointer click rounded-full text-white text-lg p-1 "
+              onClick={() => handleNext()}
+            >
+              <AiOutlineRight />
+            </div>
+            <div
+              className="absolute left-4 top-[50%] bg-black bg-opacity-40 cursor-pointer click rounded-full text-white text-lg p-1 "
+              onClick={() => handlePrevious()}
+            >
+              <AiOutlineLeft />
+            </div>
+          </>
+        )}
+
+
+
+
+
+
+
+
+
       </div>
 
       <div className=" md:w-[40%] flex space-y-4  items-center text-center flex-col">
@@ -106,8 +266,13 @@ export default function Projects({
           )}
         </div>
 
-        <div className="flex gap-x-6">
-          <ProjectLinks href={github} icon={<BsGithub />} title="Code" />
+        <div className="flex gap-x-6" ref={reftest}>
+          <ProjectLinks
+            reftest={reftest}
+            href={github}
+            icon={<BsGithub />}
+            title="Code"
+          />
           <ProjectLinks href={vercel} icon={<AiOutlineLink />} title="Link" />
         </div>
       </div>

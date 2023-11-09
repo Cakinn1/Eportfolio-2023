@@ -6,9 +6,11 @@ import Footer from "./components/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Main from "./components/Main";
 import ExtraProjects from "./components/ExtraProjects";
+import { GrMail } from "react-icons/gr";
 
 function App() {
   const [loadingState, setLoadingState] = useState<boolean>(true);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const loadingTimerId = setTimeout(() => {
@@ -33,9 +35,17 @@ function App() {
         </section>
       ) : (
         <Router>
-          <Nav />
+          <Nav isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
           <Routes>
-            <Route path="/" element={<Main />} />
+            <Route
+              path="/"
+              element={
+                <Main
+                  isModalOpen={isModalOpen}
+                  setIsModalOpen={setIsModalOpen}
+                />
+              }
+            />
             <Route path="/ExtraProjects" element={<ExtraProjects />} />
           </Routes>
           <Footer />
@@ -47,11 +57,16 @@ function App() {
 
 export default App;
 
-/// come back and chang ehte text underline on the nav
 
-//make sure they can actually send emails
-// anaimation
-// black backgrounds
-// fix project lower breakpoint
-// maybe change animations on project
-// extra: maybe add loading state based on width with time interval on mount
+/*
+ Maybe add underlines within nav text
+ could add more animations
+ extra: maybe add loading state based on width with time interval on mount
+
+
+* {
+   maybe add second page with more projects like secondary portfolio.
+  }
+*/
+
+
