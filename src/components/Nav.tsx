@@ -50,6 +50,7 @@ export default function Nav({ isModalOpen, setIsModalOpen }: NavProps) {
               className="object-cover click hover:border-[#888] cursor-pointer duration-500 hover:duration-500 ease-in-out border-2 border-black h-[50px] rounded-full"
               src="./logo-cakin.jpg"
               alt=""
+              loading="lazy"
             />
           </Link>
         </figure>

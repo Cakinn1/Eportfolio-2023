@@ -49,7 +49,7 @@ export default function Landing() {
               icon={<FaGithub />}
             />
             <LandingLinks
-              href="https://docs.google.com/document/d/1ad_ZrwaocB6kb4dDSArsiPPEKfK2qAZdrhXwz5fF-lQ/edit"
+              href="https://docs.google.com/document/d/1nr0BbmL9dMnSc6VOzTUdeh5AxknSbB8c/edit"
               icon={<FaFilePdf />}
             />
           </div>
