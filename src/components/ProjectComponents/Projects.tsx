@@ -75,6 +75,36 @@ export default function Projects({
             {image.map((item, index) => (
               <img
                 key={index}
+                className="object-contain"
+                src={item}
+                style={{
+                  transitionDuration: "1s",
+                  transform: `translateX(-${currentIndex * 100}%)`,
+                }}
+                alt="0.0"
+              />
+            ))}
+            <div
+              className="absolute right-4 top-[50%] bg-black bg-opacity-40 cursor-pointer click rounded-full text-white text-lg p-1 "
+              onClick={() => handleNext()}
+            >
+              <AiOutlineRight />
+            </div>
+            <div
+              className="absolute left-4 top-[50%] bg-black bg-opacity-40 cursor-pointer click rounded-full text-white text-lg p-1 "
+              onClick={() => handlePrevious()}
+            >
+              <AiOutlineLeft />
+            </div>
+          </>
+        )}
+
+        {l && (
+          <>
+            {image.map((item, index) => (
+              <img
+                className="object-contain"
+                key={index}
                 src={item}
                 style={{
                   transitionDuration: "1s",
@@ -104,6 +134,7 @@ export default function Projects({
               <img
                 key={index}
                 src={item}
+                className="object-contain"
                 style={{
                   transitionDuration: "1s",
                   transform: `translateX(-${currentIndex * 100}%)`,
@@ -126,12 +157,13 @@ export default function Projects({
           </>
         )}
 
-{l && (
+        {c && (
           <>
             {image.map((item, index) => (
               <img
                 key={index}
                 src={item}
+                className="object-contain"
                 style={{
                   transitionDuration: "1s",
                   transform: `translateX(-${currentIndex * 100}%)`,
@@ -154,40 +186,12 @@ export default function Projects({
           </>
         )}
 
-{c && (
+        {t && (
           <>
             {image.map((item, index) => (
               <img
                 key={index}
-                src={item}
-                style={{
-                  transitionDuration: "1s",
-                  transform: `translateX(-${currentIndex * 100}%)`,
-                }}
-                alt="0.0"
-              />
-            ))}
-            <div
-              className="absolute right-4 top-[50%] bg-black bg-opacity-40 cursor-pointer click rounded-full text-white text-lg p-1 "
-              onClick={() => handleNext()}
-            >
-              <AiOutlineRight />
-            </div>
-            <div
-              className="absolute left-4 top-[50%] bg-black bg-opacity-40 cursor-pointer click rounded-full text-white text-lg p-1 "
-              onClick={() => handlePrevious()}
-            >
-              <AiOutlineLeft />
-            </div>
-          </>
-        )}
-
-
-{t && (
-          <>
-            {image.map((item, index) => (
-              <img
-                key={index}
+                className="object-contain"
                 src={item}
                 style={{
                   transitionDuration: "1s",

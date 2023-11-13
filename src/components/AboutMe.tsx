@@ -20,7 +20,7 @@ export default function AboutMe() {
         ></div>
       </div>
       <div
-        className="container h-screen p-[100px] px-[24px] relative"
+        className="container  p-[100px] px-[24px] relative"
         id="about"
       >
         <div 

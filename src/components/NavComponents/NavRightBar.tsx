@@ -14,7 +14,7 @@ export default function NavRightBar({
       {isModalOpen && (
         <section className="fixed bg-black z-50 bg-opacity-30 h-full w-full">
           <div
-            className={`absolute right-0 p-6 bg-white h-full max-w-[600px] md:w-[50vw] w-[60vw] z-50 ${
+            className={`absolute right-0 p-6 bg-white h-full max-w-[800px] md:w-[50vw] w-full z-50 ${
               rightBarAnimate
                 ? "animate__Right--Bar"
                 : "animate__Right--Bar-close"
