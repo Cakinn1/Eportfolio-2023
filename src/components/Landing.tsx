@@ -23,7 +23,7 @@ export default function Landing() {
         </div>
       </div> */}
       <section
-        className="container relative flex items-center p-6"
+        className="container  relative flex items-center p-6"
         id="home"
         style={{ height: `calc(100vh - 84px)` }}
       >

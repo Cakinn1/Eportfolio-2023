@@ -14,119 +14,114 @@ export default function Project() {
   const project2Animate = project2View ? "animate__project2" : "";
   const project3Animate = project3View ? "animate__project3" : "";
   const project4Animate = project4View ? "animate__project4" : "";
-  const data: ProjectDataProps[] = [
-    {
-      image: ["u1.png", "u2.png", "u3.png", "u4.png"],
-      information:
-        "This project was a Virtual Internship mockup where I had to create all the functionality using the data provided via an API.",
-      links: {
-        github: "https://github.com/Cakinn1/Anthony-internship",
-        vercel: "https://anthony-internship.vercel.app/",
-      },
-      projectName: "Ultraverse",
-      technologies: [
-        {
-          Api: "FES API",
-          css: "TailwindCSS",
-          fireBase: "",
-          framework: "React.js",
-          javasScript: "Javascript",
-          redux: "",
-          typeScript: "",
-        },
-      ],
-      imageInView: "TBD",
-      refTest: project1,
-      projectAnimate: project1Animate,
-      projectInView: project1View,
+const data: ProjectDataProps[] = [
+  // Ultraverse remains the same
+  {
+    image: ["u1.png", "u2.png", "u3.png", "u4.png"],
+    information: "This project was a Virtual Internship mockup where I had to create all the functionality using the data provided via an API.",
+    links: {
+      github: "https://github.com/Cakinn1/Anthony-internship",
+      vercel: "https://anthony-internship.vercel.app/",
     },
-    {
-      image: ["b1.png", "b2.png", "b3.png", "b4.png"],
-      information:
-        "Ecom Library: React app, versatile sorting, seamless purchases, enhanced UX, skeleton loading. Showcases UI/UX skills, algorithm implementation.",
-      links: {
-        github: "https://github.com/Cakinn1/Ecom-Library-React",
-        vercel: "https://ecom-library-react-v3.vercel.app/",
+    projectName: "Ultraverse",
+    technologies: [
+      {
+        framework: "React.js",
+        css: "Tailwind",
+        Api: "FES Api",
+        fireBase: "",
+        javasScript: "",
+        redux: "",
+        typeScript: "",
       },
-      projectName: "E-commerce Library",
-      technologies: [
-        {
-          Api: "Custom API",
-          css: "TailwindCSS",
-          fireBase: "",
-          framework: "React.js",
-          javasScript: "Javascript",
-          redux: "",
-          typeScript: "",
-        },
-      ],
-      imageInView: "LIBRARY",
+    ],
+    imageInView: "ULTRAVERSE",
+    refTest: project1,
+    projectAnimate: project1Animate,
+    projectInView: project1View,
+  },
+  // Busy Bee is now the second element
+  {
+    image: ["BUSY_BEE_PHOTO_1.png", "BUSY_BEE_PHOTO_2.png", "BUSY_BEE_PHOTO_3.png", "BUSY_BEE_PHOTO_4.png"],
+    information: "Busy Bee is a social media web application I built to practise Next.js, Tailwind, Redux and Firebase. Features include CRUD functionality, posts, user authentication, likes, comments and server-side rendering",
+    links: {
+      github: "https://github.com/Cakinn1/Busy-Bee",
+      vercel: "https://busy-bee-opal.vercel.app/",
+    },
+    projectName: "Busy Bee",
+    technologies: [
+      {
+        framework: "Next.js",
+        typeScript: "",
+        javasScript: "",
+        css: "Tailwind",
+        redux: "Redux",
+        fireBase: "FireBase",
+        Api: "",
+      },
+    ],
+    imageInView: "BUSY_BEE",
+    refTest: project4,
+    projectAnimate: project4Animate,
+    projectInView: project4View,
+  },
+  // E-commerce Library is now the third element
+  {
+    image: ["b1.png", "b2.png", "b3.png", "b4.png"],
+    information: "Ecom Library: React app, versatile sorting, seamless purchases, enhanced UX, skeleton loading. Showcases UI/UX skills, algorithm implementation.",
+    links: {
+      github: "https://github.com/Cakinn1/Ecom-Library-React",
+      vercel: "https://ecom-library-react-v3.vercel.app/",
+    },
+    projectName: "E-commerce Library",
+    technologies: [
+      {
+        framework: "React.js",
+        typeScript: "",
+        javasScript: "",
+        css: "CSS",
+        Api: "",
+        fireBase: "",
+        redux: "",
+      },
+    ],
+    imageInView: "LIBRARY",
+    refTest: project2,
+    projectAnimate: project2Animate,
+    projectInView: project2View,
+  },
+  // Car Rental is now the last element
+  {
+    image: ["r1.png", "r2.png", "r3.png", "r4.png"],
+    information: "Revolutionize car rentals with a React TypeScript app featuring 6 dynamic pages, Redux-powered state management, and secure Firebase authentication.",
+    links: {
+      github: "https://github.com/Cakinn1/carRental-app",
+      vercel: "https://car-rental-app-mu.vercel.app/",
+    },
+    projectName: "Car Rental",
+    technologies: [
+      {
+        framework: "React.js",
+        typeScript: "TypeScript",
+        javasScript: "",
+        css: "Tailwind",
+        redux: "Redux",
+        Api: "",
+        fireBase: "",
+      },
+    ],
+    imageInView: "TBD",
+    refTest: project3,
+    projectAnimate: project3Animate,
+    projectInView: project3View,
+  },
+];
 
-      refTest: project2,
-      projectAnimate: project2Animate,
-      projectInView: project2View,
-    },
-    {
-      image: ["r1.png", "r2.png", "r3.png", "r4.png"],
-      information:
-        "Revolutionize car rentals with a React TypeScript app featuring 6 dynamic pages, Redux-powered state management, and secure Firebase authentication.",
-      links: {
-        github: "https://github.com/Cakinn1/carRental-app",
-        vercel: "https://car-rental-app-mu.vercel.app/",
-      },
-      projectName: "Car Rental",
-      technologies: [
-        {
-          Api: "Custom API",
-          css: "TailwindCSS",
-          fireBase: "Firebase",
-          framework: "React.js",
-          javasScript: "Javascript",
-          redux: "redux",
-          typeScript: "",
-        },
-      ],
-      imageInView: "ULTRAVERSE",
-      refTest: project3,
-      projectAnimate: project3Animate,
-      projectInView: project3View,
-    },
-    {
-      image: [
-        "BUSY_BEE_PHOTO_1.png",
-        "BUSY_BEE_PHOTO_2.png",
-        "BUSY_BEE_PHOTO_3.png",
-        "BUSY_BEE_PHOTO_4.png",
-      ],
-      information:
-        "A Twitter Clone featuring a responsive UI, real-time data sync, secure authentication, and comprehensive CRUD functionality.",
-      links: {
-        github: "https://github.com/Cakinn1/twitter-clone",
-        vercel: "https://twitter-clone-cakinn1.vercel.app/",
-      },
-      projectName: "Busy Bee",
-      technologies: [
-        {
-          Api: "Firebase",
-          css: "TailwindCSS",
-          fireBase: "",
-          framework: "Next.js",
-          javasScript: "Javascript",
-          redux: "redux",
-          typeScript: "",
-        },
-      ],
-      imageInView: "BUSY_BEE",
-      refTest: project4,
-      projectAnimate: project4Animate,
-      projectInView: project4View,
-    },
-  ];
 
   return (
     <section className="relative ">
       <section
-        className="container p-[80px] px-[24px] space-y-12"
+        className="container   p-[80px] px-[24px] space-y-12"
         id="projects"
       >
         <div

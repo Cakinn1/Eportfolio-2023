@@ -17,7 +17,7 @@ export default function AboutMe() {
           }}
         ></div>
       </div>
-      <div className="container  p-[100px] px-[24px] relative" id="about">
+      <div className="container   p-[100px] px-[24px] relative" id="about">
         <div
           className={` min-h-[70vh] bg-gray-100 shadow-lg   rounded-b-lg ${
             projectAnimation ? "animate__about--me" : "opacity-0"

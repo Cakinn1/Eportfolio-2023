@@ -27,14 +27,14 @@ export default function Projects({
   }
 
   return (
-    <div className="rounded-2xl space-y-4 md:space-y-0 flex-col md:flex-row flex w-full min-h-2/5 p-8  shadow-2xl gap-x-8 bg-gray-100">
+    <div className="rounded-2xl space-y-4 md:space-y-0 flex-col md:flex-row flex w-full min-h-2/5 p-8  shadow-md gap-x-8 bg-gray-100">
       <div className="relative  h-[320px]  rounded-2xl md:w-[500px] overflow-hidden flex bg-cover object-cover ">
         {imageInView && (
           <>
             {image.map((item, index) => (
               <img
                 key={index}
-                className="object-contain"
+                className="object-contain hover:scale-150 "
                 src={item}
                 style={{
                   transitionDuration: "1s",
@@ -59,24 +59,23 @@ export default function Projects({
         )}
       </div>
 
-      <div className=" md:w-[40%] flex space-y-4  items-center text-center flex-col">
+      <div className="md:w-[46%] flex space-y-4  items-center text-center flex-col">
         <div className="flex gap-x-2">
           <h1 className="font-bold text-2xl">
             <span>{projectName}</span>
           </h1>
         </div>
-        <p className="text-[#888] ">{information}</p>
         {technologies.map((item, index) => (
           <div
             key={index}
-            className="hidden md:flex gap-x-3 justify-center items-center text-[10px] flex-wrap"
+            className="hidden md:flex gap-x-2 justify-center items-center text-[10px] flex-wrap"
           >
             {Object.entries(item).map(
               ([key, value]) =>
                 value && (
                   <p
                     key={key}
-                    className="text-[14px]  bg-white border rounded-md shadow-md px-3 py-1 mb-2"
+                    className="flex rounded-md text-xs sm:text-sm px-3 py-1 bg-gray-200 mb-2"
                   >
                     {value}
                   </p>
@@ -84,6 +83,7 @@ export default function Projects({
             )}
           </div>
         ))}
+        <p className="text-[#888] ">{information}</p>
 
         <div className="flex gap-x-6" ref={refTest}>
           <ProjectLinks
@@ -108,7 +108,6 @@ function ProjectLinks({
   icon,
   title,
   notProject,
-  reftest,
 }: ProjectLinksProps) {
   return (
     <a
