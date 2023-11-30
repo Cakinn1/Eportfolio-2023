@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import Nav from "./components/Nav";
-import "./index.css";
+import Nav from "./Nav";
+import "../styles/global.css";
 import TypeWriter from "typewriter-effect";
-import Footer from "./components/Footer";
+import Footer from "./Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Main from "./components/Main";
-import ExtraProjects from "./components/ExtraProjects";
-import { GrMail } from "react-icons/gr";
+import Main from "./Main";
+import ExtraProjects from "../TBD/ExtraProjects";
 
 function App() {
   const [loadingState, setLoadingState] = useState<boolean>(true);
@@ -22,7 +21,7 @@ function App() {
   }, []);
 
   return (
-    <div className="overflow-x-hidden   overflow-y-scroll scroll-smooth relative">
+    <div className="overflow-x-hidden  overflow-y-scroll scroll-smooth relative">
       {loadingState ? (
         <section className="bg-[#1b1b1b]  mx-auto flex-col flex justify-center items-center h-screen">
           <div className="text-[64px] text-whte text-[#888] italic">
@@ -34,29 +33,30 @@ function App() {
           </div>
         </section>
       ) : (
-        <Router>
-          <Nav isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Main
-                  isModalOpen={isModalOpen}
-                  setIsModalOpen={setIsModalOpen}
-                />
-              }
-            />
-            <Route path="/ExtraProjects" element={<ExtraProjects />} />
-          </Routes>
-          <Footer />
-        </Router>
+        <>
+          <Router>
+            <Nav isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <Main
+                    isModalOpen={isModalOpen}
+                    setIsModalOpen={setIsModalOpen}
+                  />
+                }
+              />
+              <Route path="/ExtraProjects" element={<ExtraProjects />} />
+            </Routes>
+            <Footer />
+          </Router>
+        </>
       )}
     </div>
   );
 }
 
 export default App;
-
 
 /*
  Maybe add underlines within nav text
@@ -70,5 +70,4 @@ it says this
    maybe add second page with more projects like secondary portfolio.
   }
 */
-
 

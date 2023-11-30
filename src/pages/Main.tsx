@@ -1,9 +1,10 @@
-import Landing from "./Landing";
-import AboutMe from "./AboutMe";
-import Project from "./Project";
-import Contact from "./Contact";
+import Landing from "../components/Landing";
+import AboutMe from "../components/AboutMe";
+import Project from "../components/Project";
+import Contact from "../components/Contact";
 import { GrMail } from "react-icons/gr";
-import useAnimate from "./useAnimate";
+import useAnimate from "../hooks/useAnimate";
+import { useEffect, useState } from "react";
 
 interface NavProps {
   isModalOpen: boolean;
@@ -11,19 +12,17 @@ interface NavProps {
 }
 
 export default function Main({ isModalOpen, setIsModalOpen }: NavProps) {
+  const { inViewPort: mailInView, ref: mailRef } = useAnimate();
 
-const {inViewPort: mailInView, ref: mailRef} = useAnimate()
-
-const animate = mailInView ? "animate__mail" : ""
-
+  const animate = mailInView ? "animate__mail" : "";
 
   return (
     <>
       {!isModalOpen && (
         <a
-        ref={mailRef}
+          ref={mailRef}
           href="#contact"
-          style={{opacity: mailInView ? 1 : 0}}
+          style={{ opacity: mailInView ? 1 : 0 }}
           className={`${animate} fixed bottom-6  click right-6 text-white x p-5 px-5 rounded-full z-50 bg-[#1b1b1b]`}
         >
           <GrMail className="text-2xl" />

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { BsCircleHalf, BsFolderSymlink } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
-import NavList from "./NavComponents/NavList";
-import NavRightBar from "./NavComponents/NavRightBar";
 import { Link } from "react-router-dom";
+import { NavListProps, NavRightBarProps, NavRightListProps } from "../interfaces/interfaces";
+import { FaXmark } from "react-icons/fa6";
 
 interface NavProps {
   isModalOpen: boolean;
@@ -17,7 +17,6 @@ export default function Nav({ isModalOpen, setIsModalOpen }: NavProps) {
     if (isModalOpen) {
       setRightBarAnimate(false);
       const closeModalTimeout = setTimeout(() => {
-      
         setIsModalOpen((prevModalValue: boolean) => !prevModalValue);
       }, 500);
       return () => {
@@ -38,7 +37,7 @@ export default function Nav({ isModalOpen, setIsModalOpen }: NavProps) {
 
   return (
     <section className="bg-white xl:bg-transparent fixed w-full z-50    animate__nav shadow-lg xl:shadow-none xl:max-w-[1024px mx-auto">
-      <NavRightBar
+      <NavRight
         handleModal={handleModal}
         isModalOpen={isModalOpen}
         rightBarAnimate={rightBarAnimate}
@@ -93,11 +92,65 @@ export default function Nav({ isModalOpen, setIsModalOpen }: NavProps) {
               Contact
             </Link>
           </li>
-          <li className="click">
-            {/* <BsCircleHalf className="fas border-2 rounded-full text-lg border-black fa-adjust" /> */}
-          </li>
+      
         </ul>
       </nav>
     </section>
+  );
+}
+
+function NavRight({
+  handleModal,
+  isModalOpen,
+  rightBarAnimate,
+}: NavRightBarProps) {
+  return (
+    <>
+      {isModalOpen && (
+        <section className="fixed bg-black z-50 bg-opacity-30 h-full w-full">
+          <div
+            className={`absolute right-0 p-6 bg-white h-full max-w-[800px] md:w-[50vw] w-full z-50 ${
+              rightBarAnimate
+                ? "animate__Right--Bar"
+                : "animate__Right--Bar-close"
+            }`}
+          >
+            <FaXmark
+              className="ml-auto text-2xl nav__side-bar--links cursor-pointer click "
+              onClick={() => handleModal()}
+            />
+            <div className="mt-10 space-y-2  text-lg cursor-pointer">
+              <NavRightList href="#home" paragraph="Home" />
+              <NavRightList href="#about" paragraph="About Me" />
+              <NavRightList href="#projects" paragraph="Projects" />
+              <NavRightList href="#contact" paragraph="Contact" />
+            </div>
+          </div>
+        </section>
+      )}
+    </>
+  );
+}
+
+
+function NavRightList({ paragraph, href }: NavRightListProps) {
+  return (
+    <a href={href} className="nav__side-bar--links block p-2">
+      {paragraph}
+    </a>
+  );
+}
+
+function NavList({ href, paragraph, icon }: NavListProps) {
+  return (
+    <li className="nav__link click">
+      <a
+        href={href}
+        className={`nav__link--anchor   hover:text-[#888] duration-500 hover:duration-500 ease-in-out link__hover-effect link__hover-effect--black click`}
+      >
+        {paragraph}
+        {icon}
+      </a>
+    </li>
   );
 }

@@ -1,7 +1,7 @@
 import { AiFillMail } from "react-icons/ai";
 import { BsPhone, BsPhoneFill } from "react-icons/bs";
 import { BiPhone } from "react-icons/bi";
-import useAnimate from "./useAnimate";
+import useAnimate from "../hooks/useAnimate";
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import { FaSpinner } from "react-icons/fa";
