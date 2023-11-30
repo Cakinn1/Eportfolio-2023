@@ -62,19 +62,21 @@ export default function Projects({
       <div className=" md:w-[40%] flex space-y-4  items-center text-center flex-col">
         <div className="flex gap-x-2">
           <h1 className="font-bold text-2xl">
-            {projectName}
             <span>{projectName}</span>
           </h1>
         </div>
         <p className="text-[#888] ">{information}</p>
         {technologies.map((item, index) => (
-          <div key={index}>
+          <div
+            key={index}
+            className="hidden md:flex gap-x-3 justify-center items-center text-[10px] flex-wrap"
+          >
             {Object.entries(item).map(
               ([key, value]) =>
                 value && (
                   <p
                     key={key}
-                    className="text-[14px] bg-white border rounded-md shadow-md px-3 py-1 mb-2"
+                    className="text-[14px]  bg-white border rounded-md shadow-md px-3 py-1 mb-2"
                   >
                     {value}
                   </p>
@@ -82,6 +84,7 @@ export default function Projects({
             )}
           </div>
         ))}
+
         <div className="flex gap-x-6" ref={refTest}>
           <ProjectLinks
             reftest={refTest}
