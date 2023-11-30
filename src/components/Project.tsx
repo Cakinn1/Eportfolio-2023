@@ -73,7 +73,7 @@ const data: ProjectDataProps[] = [
       github: "https://github.com/Cakinn1/Ecom-Library-React",
       vercel: "https://ecom-library-react-v3.vercel.app/",
     },
-    projectName: "E-commerce Library",
+    projectName: "Library",
     technologies: [
       {
         framework: "React.js",
