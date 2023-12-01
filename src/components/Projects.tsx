@@ -27,8 +27,8 @@ export default function Projects({
   }
 
   return (
-    <div className="rounded-2xl space-y-4 md:space-y-0 flex-col md:flex-row flex w-full min-h-2/5 p-8  shadow-md gap-x-8 bg-gray-100">
-      <div className="relative  h-[320px]  rounded-2xl md:w-[500px] overflow-hidden flex bg-cover object-cover ">
+    <div className="rounded-2xl space-y-4 md:space-y-0 flex-col md:flex-row flex w-full min-h-2/5 p-5 shadow-md gap-x-8 bg-gray-100">
+      <div className="relative  md:h-[320px]  rounded-2xl md:w-[500px] overflow-hidden flex bg-cover object-cover ">
         {imageInView && (
           <>
             {image.map((item, index) => (
@@ -59,16 +59,15 @@ export default function Projects({
         )}
       </div>
 
-      <div className="md:w-[46%] flex space-y-4  items-center text-center flex-col">
-        <div className="flex gap-x-2">
-          <h1 className="font-bold text-2xl">
+      <div className="md:w-[50%] flex  lg:space-y-4 space-y-1 md:justify-center  md:items-center md:text-center flex-col">
+        <div className="flex gap-x-2  flex-col space-y-2">
+          <h1 className="font-bold text-2xl ">
             <span>{projectName}</span>
           </h1>
-        </div>
         {technologies.map((item, index) => (
           <div
             key={index}
-            className="hidden md:flex gap-x-2 justify-center items-center text-[10px] flex-wrap"
+            className=" flex gap-x-2 md:justify-center md:items-center text-[10px] flex-wrap"
           >
             {Object.entries(item).map(
               ([key, value]) =>
@@ -83,7 +82,9 @@ export default function Projects({
             )}
           </div>
         ))}
-        <p className="text-[#888] ">{information}</p>
+        </div>
+
+        <p className="text-[#888] text-left md:text-center md:text-sm text-[12px] ">{information}</p>
 
         <div className="flex gap-x-6" ref={refTest}>
           <ProjectLinks
@@ -103,22 +104,15 @@ export default function Projects({
   );
 }
 
-function ProjectLinks({
-  href,
-  icon,
-  title,
-  notProject,
-}: ProjectLinksProps) {
+function ProjectLinks({ href, icon, title, notProject }: ProjectLinksProps) {
   return (
     <a
       href={href}
       target="_blank"
-      className="py-2 px-3 rounded-full  bg-white gap-x-2 flex justify-center click items-center"
+      className="py-2 px-3 rounded-md text-sm bg-gray-200 bg-whit gap-x-2 flex justify-center click items-center"
     >
       {notProject ? "" : <p>{title}</p>}
-      <p className="cursor-pointer shadow-2xl text-black rounded-full">
-        {icon}
-      </p>
+      <p className="cursor-pointer shadow-2xl text-black rounded-md">{icon}</p>
     </a>
   );
 }
