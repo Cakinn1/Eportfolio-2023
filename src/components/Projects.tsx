@@ -59,7 +59,7 @@ export default function Projects({
         )}
       </div>
 
-      <div className="md:w-[50%] flex  lg:space-y-4 space-y-1 md:justify-center  md:items-center md:text-center flex-col">
+      <div className="md:w-[50%] flex  lg:space-y-2 space-y-1 md:justify-center  md:items-center md:text-center flex-col">
         <div className="flex gap-x-2  flex-col space-y-2">
           <h1 className="font-bold text-2xl ">
             <span>{projectName}</span>
