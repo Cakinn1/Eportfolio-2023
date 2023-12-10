@@ -126,7 +126,7 @@ export default function Project() {
   return (
     <section className="relative ">
       <section
-        className="container   p-[80px] px-[24px] space-y-12"
+        className="container p-[80px] px-[24px] space-y-12"
         id="projects"
       >
         <div

@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   return (
-    <div className="overflow-x-hidden  overflow-y-scroll scroll-smooth relative">
+    <div className="overflow-x-hidden overflow-y-hidden scroll-smooth relative">
       {loadingState ? (
         <section className="bg-[#1b1b1b]  mx-auto flex-col flex justify-center items-center h-screen">
           <div className="text-[64px] text-whte text-[#888] italic">
